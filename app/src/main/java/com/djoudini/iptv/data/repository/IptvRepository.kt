@@ -258,4 +258,27 @@ class IptvRepository @Inject constructor(
             Result.Error(e.localizedMessage ?: "Unknown error")
         }
     }
+
+    // --- VOD & Series Info ---
+    suspend fun getVodInfo(vodId: Int): XtreamVodInfo? {
+        return try {
+            val user = settingsRepository.usernameFlow.first() ?: return null
+            val pass = settingsRepository.passwordFlow.first() ?: return null
+            val service = getService() ?: return null
+            service.getVodInfo(user, pass, "get_vod_info", vodId)
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    suspend fun getSeriesInfo(seriesId: Int): XtreamSeriesInfoResponse? {
+        return try {
+            val user = settingsRepository.usernameFlow.first() ?: return null
+            val pass = settingsRepository.passwordFlow.first() ?: return null
+            val service = getService() ?: return null
+            service.getSeriesInfo(user, pass, "get_series_info", seriesId)
+        } catch (e: Exception) {
+            null
+        }
+    }
 }

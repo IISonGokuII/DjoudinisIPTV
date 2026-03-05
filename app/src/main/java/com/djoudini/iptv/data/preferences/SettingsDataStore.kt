@@ -52,11 +52,21 @@ class SettingsRepository @Inject constructor(
         val USER_AGENT = stringPreferencesKey("user_agent")
         const val DEFAULT_USER_AGENT = "IPTVSmartersPro"
 
+        // View Preference
+        val VIEW_PREFERENCE = stringPreferencesKey("view_preference")
+
         // Trakt
         val TRAKT_TOKEN = stringPreferencesKey("trakt_token")
+        val TRAKT_USERNAME = stringPreferencesKey("trakt_username")
     }
 
-    // --- Flows ---
+    // --- Additional Flows ---
+
+    val userAgentFlow: Flow<String?> = internalDataStore.data.map { it[USER_AGENT] }
+
+    val viewPreferenceFlow: Flow<String?> = internalDataStore.data.map { it[VIEW_PREFERENCE] }
+
+    val traktUserNameFlow: Flow<String?> = internalDataStore.data.map { it[TRAKT_USERNAME] }
 
     val isOnboardingCompleteFlow: Flow<Boolean> = internalDataStore.data.map { it[IS_ONBOARDING_COMPLETE] ?: false }
     
@@ -185,5 +195,22 @@ class SettingsRepository @Inject constructor(
 
     suspend fun logoutTrakt() {
         internalDataStore.edit { it.remove(TRAKT_TOKEN) }
+    }
+
+    suspend fun saveUserAgent(agent: String) {
+        internalDataStore.edit { it[USER_AGENT] = agent }
+    }
+
+    suspend fun saveViewPreference(viewType: String) {
+        internalDataStore.edit { it[VIEW_PREFERENCE] = viewType }
+    }
+
+    suspend fun clearAllCache() {
+        // Clear cache implementation would go here
+        // For now, just a placeholder
+    }
+
+    suspend fun saveTraktUsername(username: String) {
+        internalDataStore.edit { it[TRAKT_USERNAME] = username }
     }
 }

@@ -41,7 +41,6 @@ fun AppNavigation(
     val navController = rememberNavController()
     var startDestination by remember { mutableStateOf<String?>(null) }
 
-    // Check for existing credentials on startup
     LaunchedEffect(Unit) {
         val username = settingsRepository.usernameFlow.first()
         startDestination = if (!username.isNullOrBlank()) {
@@ -71,9 +70,7 @@ fun AppNavigation(
                 )
             }
             composable(Screen.LiveTv.route) {
-                LiveTvScreen(
-                    onNavigateToSettings = { navController.navigate(Screen.Settings.route) }
-                )
+                LiveTvScreen()
             }
             composable(Screen.Vod.route) {
                 VodScreen(
@@ -106,9 +103,7 @@ fun AppNavigation(
                 )
             }
             composable(Screen.Settings.route) {
-                SettingsScreen(
-                    onNavigateBack = { navController.popBackStack() }
-                )
+                SettingsScreen()
             }
             composable(Screen.TraktLogin.route) {
                 TraktLoginScreen(
