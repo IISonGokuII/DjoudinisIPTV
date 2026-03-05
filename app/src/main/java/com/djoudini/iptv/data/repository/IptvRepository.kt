@@ -52,7 +52,9 @@ class IptvRepository @Inject constructor(
 
     // --- Authentication ---
 
-    suspend fun loginXtream(host: String, user: String, pass: String): Result<XtreamLoginResponse> = withContext(Dispatchers.IO) {
+    data class LoginResult(val response: XtreamLoginResponse, val providerId: Long)
+
+    suspend fun loginXtream(host: String, user: String, pass: String): Result<LoginResult> = withContext(Dispatchers.IO) {
         try {
             val baseUrl = if (host.endsWith("/")) host else "$host/"
             val retrofit = Retrofit.Builder()
@@ -75,7 +77,7 @@ class IptvRepository @Inject constructor(
                     )
                 )
                 settingsRepository.saveCredentials(host, user, pass)
-                Result.Success(response)
+                Result.Success(LoginResult(response, providerId))
             } else {
                 Result.Error("Login fehlgeschlagen. Bitte Zugangsdaten prüfen.")
             }
@@ -235,5 +237,25 @@ class IptvRepository @Inject constructor(
 
     suspend fun fetchSeriesCount(): Int {
         return 0 // Placeholder
+    }
+
+    // --- Onboarding Methods ---
+    suspend fun loadCategoriesForOnboarding(providerId: Long): Result<List<CategoryEntity>> {
+        return try {
+            val result = fetchAllXtreamCategories(providerId)
+            when (result) {
+                is Result.Success -> {
+                    // Fetch categories from DB after syncing
+                    val categories = getCategories(providerId, "LIVE").first() +
+                            getCategories(providerId, "VOD").first() +
+                            getCategories(providerId, "SERIES").first()
+                    Result.Success(categories)
+                }
+                is Result.Error -> Result.Error(result.message)
+                else -> Result.Error("Unknown error")
+            }
+        } catch (e: Exception) {
+            Result.Error(e.localizedMessage ?: "Unknown error")
+        }
     }
 }
