@@ -51,6 +51,9 @@ class SettingsRepository @Inject constructor(
         // Legacy/Misc
         val USER_AGENT = stringPreferencesKey("user_agent")
         const val DEFAULT_USER_AGENT = "IPTVSmartersPro"
+
+        // Trakt
+        val TRAKT_TOKEN = stringPreferencesKey("trakt_token")
     }
 
     // --- Flows ---
@@ -174,5 +177,13 @@ class SettingsRepository @Inject constructor(
             it[USERNAME] = user
             it[PASSWORD] = pass
         }
+    }
+
+    suspend fun saveTraktToken(token: String) {
+        internalDataStore.edit { it[TRAKT_TOKEN] = token }
+    }
+
+    suspend fun logoutTrakt() {
+        internalDataStore.edit { it.remove(TRAKT_TOKEN) }
     }
 }

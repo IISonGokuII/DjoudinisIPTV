@@ -47,17 +47,9 @@ class TraktRepository @Inject constructor(
                 
                 if (response.isSuccessful) {
                     val tokenResponse = response.body()!!
-                    val userSettings = traktService.getUserSettings(
-                        token = "Bearer ${tokenResponse.accessToken}",
-                        apiKey = clientId
-                    )
-                    
-                    settingsRepository.saveTraktToken(
-                        tokenResponse.accessToken,
-                        userSettings.user.username
-                    )
-                    
-                    emit(TraktAuthStatus.Success(userSettings.user.username))
+                    settingsRepository.saveTraktToken(tokenResponse.accessToken)
+
+                    emit(TraktAuthStatus.Success(tokenResponse.accessToken))
                     break
                 } else if (response.code() == 400) {
                     // Pending - keep polling

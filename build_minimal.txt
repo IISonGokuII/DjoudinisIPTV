@@ -1,0 +1,61 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:parseDebugLocalResources
+> Task :app:mergeDebugResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:processDebugManifestForPackage
+> Task :app:processDebugResources
+> Task :app:kspDebugKotlin
+
+> Task :app:compileDebugKotlin
+w: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:68:21 Variable 'providerId' is never used
+w: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:170:37 Parameter 'categoryId' is never used
+w: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:173:33 Parameter 'categoryId' is never used
+w: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:183:44 Elvis operator (?:) always returns the left operand of non-nullable type Int
+w: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:184:36 Elvis operator (?:) always returns the left operand of non-nullable type String
+w: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:198:35 Parameter 'categoryId' is never used
+w: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:206:44 Elvis operator (?:) always returns the left operand of non-nullable type Int
+w: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/player/AfrController.kt:22:41 'getter for defaultDisplay: Display!' is deprecated. Deprecated in Java
+w: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/player/AfrController.kt:26:17 Variable 'bestMode' is never used
+
+> Task :app:compileDebugJavaWithJavac
+> Task :app:hiltAggregateDepsDebug
+> Task :app:hiltJavaCompileDebug
+> Task :app:processDebugJavaRes
+> Task :app:transformDebugClassesWithAsm
+> Task :app:mergeDebugJavaResource
+> Task :app:dexBuilderDebug
+> Task :app:mergeDebugGlobalSynthetics
+> Task :app:mergeProjectDexDebug
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+
+BUILD SUCCESSFUL in 43s
+38 actionable tasks: 22 executed, 16 up-to-date

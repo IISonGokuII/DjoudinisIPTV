@@ -9,7 +9,9 @@ import com.djoudini.iptv.util.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.withContext
+import androidx.paging.PagingData
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -61,7 +63,7 @@ class IptvRepository @Inject constructor(
             val service = retrofit.create(XtreamService::class.java)
             val response = service.login(user, pass)
 
-            if (response.userInfo?.auth == 1) {
+            if (response.userInfo?.status == "Active") {
                 // Save to local DB as a provider
                 val providerId = providerDao.insertProvider(
                     ProviderEntity(
@@ -221,4 +223,17 @@ class IptvRepository @Inject constructor(
         providerId = providerId,
         isAdult = this.name.lowercase().contains("adult") || this.name.lowercase().contains("xxx")
     )
+
+    // --- Dashboard Count Methods ---
+    suspend fun fetchLiveStreamsCount(): Int {
+        return 0 // Placeholder
+    }
+
+    suspend fun fetchVodStreamsCount(): Int {
+        return 0 // Placeholder
+    }
+
+    suspend fun fetchSeriesCount(): Int {
+        return 0 // Placeholder
+    }
 }

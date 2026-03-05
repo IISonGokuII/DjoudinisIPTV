@@ -1,0 +1,148 @@
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:generateDebugResValues FROM-CACHE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:checkDebugAarMetadata
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug FROM-CACHE
+> Task :app:processDebugMainManifest FROM-CACHE
+> Task :app:processDebugManifest FROM-CACHE
+> Task :app:processDebugManifestForPackage FROM-CACHE
+> Task :app:javaPreCompileDebug FROM-CACHE
+> Task :app:mergeDebugShaders FROM-CACHE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets FROM-CACHE
+> Task :app:compressDebugAssets FROM-CACHE
+> Task :app:desugarDebugFileDependencies FROM-CACHE
+> Task :app:mergeDebugJniLibFolders FROM-CACHE
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:parseDebugLocalResources
+> Task :app:checkDebugDuplicateClasses
+> Task :app:mergeExtDexDebug FROM-CACHE
+> Task :app:mergeDebugResources
+> Task :app:mergeLibDexDebug FROM-CACHE
+> Task :app:processDebugResources
+> Task :app:kspDebugKotlin
+
+> Task :app:compileDebugKotlin FAILED
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:64:36 Unresolved reference: auth
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:168:63 Unresolved reference: PagingData
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:168:92 Unresolved reference: flowOf
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:168:99 Unresolved reference: PagingData
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:171:59 Unresolved reference: PagingData
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:171:84 Unresolved reference: flowOf
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:171:91 Unresolved reference: PagingData
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:196:61 Unresolved reference: PagingData
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:196:89 Unresolved reference: flowOf
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/IptvRepository.kt:196:96 Unresolved reference: PagingData
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/TraktRepository.kt:55:40 Unresolved reference: saveTraktToken
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/data/repository/TraktRepository.kt:77:28 Unresolved reference: logoutTrakt
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/dashboard/DashboardViewModel.kt:107:48 Unresolved reference: fetchLiveStreamsCount
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/dashboard/DashboardViewModel.kt:116:47 Unresolved reference: fetchVodStreamsCount
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/dashboard/DashboardViewModel.kt:125:50 Unresolved reference: fetchSeriesCount
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:50:40 Unresolved reference: OnboardingState
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:60:43 Unresolved reference: collectAsLazyPagingItems
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:70:28 Unresolved reference: onboardingComplete
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:93:50 Unresolved reference: toggleFullScreen
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:101:60 Unresolved reference: toggleFullScreen
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:119:15 Unresolved reference: LazyPagingItems
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:119:31 Unresolved reference: ChannelEntity
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:128:67 Unresolved reference: SidebarItem
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:129:17 Unresolved reference: DynamicSidebar
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:131:40 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:150:43 Unresolved reference: isSyncing
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:157:68 Unresolved reference: syncCurrentCategory
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:188:26 Cannot find a parameter with this name: uiState
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:188:51 Cannot find a parameter with this name: viewModel
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:188:80 No value passed for parameter 'liveTvUiState'
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:188:80 No value passed for parameter 'liveTvViewModel'
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:197:15 Unresolved reference: LazyPagingItems
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:197:31 Unresolved reference: ChannelEntity
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:204:38 Unresolved reference: liveTvUiState
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:204:71 Unresolved reference: liveTvViewModel
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:206:39 Unresolved reference: liveTvUiState
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:221:25 Unresolved reference: liveTvUiState
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:228:48 Unresolved reference: liveTvViewModel
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:244:46 Unresolved reference: liveTvUiState
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:245:45 Unresolved reference: liveTvViewModel
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:267:45 Unresolved reference: currentEpg
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:269:56 Unresolved reference: toggleFullScreen
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:291:31 Unresolved reference: currentEpg
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:299:49 Unresolved reference: currentEpg
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:299:69 Unresolved reference: it
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:299:80 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:300:25 @Composable invocations can only happen from the context of a @Composable function
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:318:14 Unresolved reference: ChannelEntity
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:357:14 Unresolved reference: ChannelEntity
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:360:23 Unresolved reference: XtreamEpgListing
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:376:13 Unresolved reference: delay
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:405:20 Unresolved reference: Base64
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:405:70 Unresolved reference: StandardCharsets
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:419:17 Unresolved reference: PlayerView
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:420:21 Unresolved reference: player
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:421:21 Unresolved reference: useController
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:422:21 Unresolved reference: resizeMode
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:423:21 Unresolved reference: layoutParams
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvScreen.kt:510:22 Unresolved reference: XtreamEpgListing
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvViewModel.kt:36:32 Unresolved reference: onboardingCompleteFlow
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/livetv/LiveTvViewModel.kt:36:65 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/login/LoginViewModel.kt:56:47 Unresolved reference: login
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/onboarding/LoginScreen.kt:68:54 Cannot find a parameter with this name: size
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/series/SeriesViewModel.kt:60:14 Not enough information to infer type variable R
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/series/SeriesViewModel.kt:60:20 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/series/SeriesViewModel.kt:61:34 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/series/detail/SeriesDetailViewModel.kt:32:43 Unresolved reference: getSeriesInfo
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsScreen.kt:19:43 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsScreen.kt:60:54 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsScreen.kt:61:58 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsScreen.kt:65:54 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsScreen.kt:66:58 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsScreen.kt:70:54 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsScreen.kt:71:58 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:6:43 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:18:46 Unresolved reference: DEFAULT_BUFFER_SIZE
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:19:19 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:19:30 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:30:47 Not enough information to infer type variable T1
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:31:28 Unresolved reference: userAgentFlow
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:33:28 Unresolved reference: viewPreferenceFlow
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:34:9 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:34:32 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:37:26 Type mismatch: inferred type is BufferSize but Int was expected
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:49:32 Unresolved reference: saveUserAgent
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:55:47 Type mismatch: inferred type is Int but BufferSize was expected
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:61:28 Unresolved reference: clearAllCache
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:65:34 Unresolved reference: ViewType
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/settings/SettingsViewModel.kt:67:32 Unresolved reference: saveViewPreference
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/trakt/TraktViewModel.kt:35:64 Unresolved reference: traktUserNameFlow
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/vod/VodScreen.kt:44:40 Unresolved reference: OnboardingState
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/vod/VodScreen.kt:66:28 Unresolved reference: onboardingComplete
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/vod/VodViewModel.kt:60:14 Not enough information to infer type variable R
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/vod/VodViewModel.kt:60:20 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/vod/VodViewModel.kt:61:34 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///C:/Users/WhatsappBot/DjoudinisIPTV/app/src/main/java/com/djoudini/iptv/ui/vod/detail/VodDetailViewModel.kt:32:43 Unresolved reference: getVodInfo
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 19s
+27 actionable tasks: 14 executed, 13 from cache
