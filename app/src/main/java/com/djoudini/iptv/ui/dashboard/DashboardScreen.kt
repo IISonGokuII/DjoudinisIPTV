@@ -32,6 +32,7 @@ fun DashboardScreen(
     onNavigateToLive: () -> Unit,
     onNavigateToVod: () -> Unit,
     onNavigateToSeries: () -> Unit,
+    onNavigateToFavorites: () -> Unit,
     onNavigateToSettings: () -> Unit,
     viewModel: DashboardViewModel = hiltViewModel()
 ) {
@@ -120,6 +121,20 @@ fun DashboardScreen(
                     modifier = Modifier.weight(1f)
                 )
                 DashboardTile(
+                    title = "FAVORITEN",
+                    subtitle = "Gespeicherte Inhalte",
+                    isLoading = false,
+                    color1 = Color(0xFFFFA500), // Orange
+                    color2 = Color(0xFFCC5500),
+                    onClick = onNavigateToFavorites,
+                    modifier = Modifier.weight(1f)
+                )
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth().weight(1f),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                DashboardTile(
                     title = "EINSTELLUNGEN",
                     subtitle = "System & Account",
                     isLoading = false,
@@ -128,6 +143,8 @@ fun DashboardScreen(
                     onClick = onNavigateToSettings,
                     modifier = Modifier.weight(1f)
                 )
+                // Spacer for now - could add another tile later
+                Spacer(modifier = Modifier.weight(1f))
             }
         }
     }

@@ -82,6 +82,13 @@ data class VodProgressEntity(
     val lastUpdated: Long = System.currentTimeMillis()
 )
 
+@Entity(tableName = "favorites")
+data class FavoriteEntity(
+    @PrimaryKey val streamId: String,
+    val streamType: String, // "LIVE", "VOD", "SERIES"
+    val addedAt: Long = System.currentTimeMillis()
+)
+
 // --- DAOs (Restored and Extended) ---
 
 @Dao
@@ -142,6 +149,27 @@ interface VodProgressDao {
     suspend fun saveProgress(progress: VodProgressEntity)
 }
 
+@Dao
+interface FavoriteDao {
+    @Query("SELECT * FROM favorites ORDER BY addedAt DESC")
+    fun getAllFavorites(): Flow<List<FavoriteEntity>>
+    
+    @Query("SELECT * FROM favorites WHERE streamType = :type ORDER BY addedAt DESC")
+    fun getFavoritesByType(type: String): Flow<List<FavoriteEntity>>
+    
+    @Query("SELECT EXISTS(SELECT 1 FROM favorites WHERE streamId = :streamId)")
+    fun isFavorite(streamId: String): Flow<Boolean>
+    
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun addFavorite(favorite: FavoriteEntity)
+    
+    @Query("DELETE FROM favorites WHERE streamId = :streamId")
+    suspend fun removeFavorite(streamId: String)
+    
+    @Query("DELETE FROM favorites")
+    suspend fun clearAllFavorites()
+}
+
 // --- Database ---
 
 @Database(
@@ -152,7 +180,8 @@ interface VodProgressDao {
         VodEntity::class,
         SeriesEntity::class,
         EpgEventEntity::class, 
-        VodProgressEntity::class
+        VodProgressEntity::class,
+        FavoriteEntity::class
     ], 
     version = 5, 
     exportSchema = false
@@ -165,4 +194,5 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun seriesDao(): SeriesDao
     abstract fun epgDao(): EpgDao
     abstract fun vodProgressDao(): VodProgressDao
+    abstract fun favoriteDao(): FavoriteDao
 }

@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.djoudini.iptv.ui.dashboard.DashboardScreen
+import com.djoudini.iptv.ui.favorites.FavoritesScreen
 import com.djoudini.iptv.ui.livetv.LiveTvScreen
 import com.djoudini.iptv.ui.onboarding.OnboardingContent
 import com.djoudini.iptv.ui.series.SeriesScreen
@@ -32,6 +33,7 @@ sealed class Screen(val route: String) {
     }
     object Settings : Screen("settings")
     object TraktLogin : Screen("trakt_login")
+    object Favorites : Screen("favorites")
 }
 
 @Composable
@@ -66,6 +68,7 @@ fun AppNavigation(
                     onNavigateToLive = { navController.navigate(Screen.LiveTv.route) },
                     onNavigateToVod = { navController.navigate(Screen.Vod.route) },
                     onNavigateToSeries = { navController.navigate(Screen.Series.route) },
+                    onNavigateToFavorites = { navController.navigate(Screen.Favorites.route) },
                     onNavigateToSettings = { navController.navigate(Screen.Settings.route) }
                 )
             }
@@ -103,7 +106,17 @@ fun AppNavigation(
                 )
             }
             composable(Screen.Settings.route) {
-                SettingsScreen()
+                SettingsScreen(
+                    onNavigateBack = { navController.popBackStack() },
+                    onNavigateToTrakt = { navController.navigate(Screen.TraktLogin.route) }
+                )
+            }
+            composable(Screen.Favorites.route) {
+                FavoritesScreen(
+                    onNavigateBack = { navController.popBackStack() },
+                    onNavigateToPlayer = { /* TODO: Navigate to player */ },
+                    onNavigateToSeriesDetail = { seriesId -> navController.navigate(Screen.SeriesDetail.createRoute(seriesId.toInt())) }
+                )
             }
             composable(Screen.TraktLogin.route) {
                 TraktLoginScreen(

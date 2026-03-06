@@ -28,6 +28,7 @@ class IptvRepository @Inject constructor(
     private val seriesDao: SeriesDao,
     private val epgDao: EpgDao,
     private val vodProgressDao: VodProgressDao,
+    private val favoriteDao: FavoriteDao,
     private val settingsRepository: SettingsRepository,
     private val okHttpClient: OkHttpClient
 ) {
@@ -277,6 +278,58 @@ class IptvRepository @Inject constructor(
             val pass = settingsRepository.passwordFlow.first() ?: return null
             val service = getService() ?: return null
             service.getSeriesInfo(user, pass, "get_series_info", seriesId)
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    // --- Favorites ---
+    
+    fun getAllFavorites(): Flow<List<FavoriteEntity>> = favoriteDao.getAllFavorites()
+    
+    fun getFavoritesByType(type: String): Flow<List<FavoriteEntity>> = favoriteDao.getFavoritesByType(type)
+    
+    fun isFavorite(streamId: String): Flow<Boolean> = favoriteDao.isFavorite(streamId)
+    
+    suspend fun addFavorite(streamId: String, streamType: String) {
+        favoriteDao.addFavorite(FavoriteEntity(streamId = streamId, streamType = streamType))
+    }
+    
+    suspend fun removeFavorite(streamId: String) {
+        favoriteDao.removeFavorite(streamId)
+    }
+    
+    suspend fun toggleFavorite(streamId: String, streamType: String) {
+        val isFav = favoriteDao.isFavorite(streamId).first()
+        if (isFav) {
+            favoriteDao.removeFavorite(streamId)
+        } else {
+            favoriteDao.addFavorite(FavoriteEntity(streamId = streamId, streamType = streamType))
+        }
+    }
+    
+    // Get channel by ID for favorites
+    suspend fun getChannelById(streamId: String): ChannelEntity? {
+        return try {
+            channelDao.getChannelsByCategory("", 1L).first().find { it.streamId == streamId }
+        } catch (e: Exception) {
+            null
+        }
+    }
+    
+    // Get VOD by ID for favorites
+    suspend fun getVodById(streamId: String): VodEntity? {
+        return try {
+            vodDao.getVodsByCategory("", 1L).first().find { it.streamId.toString() == streamId }
+        } catch (e: Exception) {
+            null
+        }
+    }
+    
+    // Get Series by ID for favorites
+    suspend fun getSeriesById(seriesId: String): SeriesEntity? {
+        return try {
+            seriesDao.getSeriesByCategory("", 1L).first().find { it.seriesId.toString() == seriesId }
         } catch (e: Exception) {
             null
         }
