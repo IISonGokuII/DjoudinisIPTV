@@ -55,4 +55,8 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideVodProgressDao(database: AppDatabase): VodProgressDao = database.vodProgressDao()
+
+    @Provides
+    @Singleton
+    fun provideFavoriteDao(database: AppDatabase): FavoriteDao = database.favoriteDao()
 }
